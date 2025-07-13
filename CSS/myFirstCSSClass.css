@@ -1,5 +1,5 @@
  #myFirstClass {
-        color: red ;
+        color: #c9bdbd ;
         background-color: aqua;
       }
       #mySecondClass {
@@ -10,3 +10,7 @@
         color: green;
         background-color: pink;
       } 
+
+      a{
+        text-decoration: none;
+      }
