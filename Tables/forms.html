@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Enter your name</label>
+      <input type="text" id="name" name="name" />
+      <br />
+      <label for="email">Enter email</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <label for="password">Enter password</label>
+      <input type="password" id="password" name="password" />
+      <br />
+      <label for="phone">Enter phone</label>
+      <input type="number" id="phone" name="phone" />
+      <br />
+      <label for="dob">Enter date of birth</label>
+      <input type="date" id="dob" name="dob" />
+      <br />
+      <label for="time">Enter time</label>
+      <input type="time" id="time" name="time" />
+      <br />
+      <label for="gender">Select gender</label>
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="female">female</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <br />
+      <label for="courses">Select courses</label>
+      <input type="checkbox" name="courses" id="course1" value="course1" />
+      <label for="course1">Course 1</label>
+      <input type="checkbox" name="courses" id="course2" value="course2" />
+      <label for="course2">Course 2</label>
+      <input type="checkbox" name="courses" id="course3" value="course3" />
+      <label for="course3">Course 3</label>
+      <br />
+      <label for="country">Select country</label>
+      
+      <fieldset style="background-color: lightgreen;">
+        <legend style="color: blue;">Select country</legend>
+        <select name="country" id="country">
+          <option value="pakistan" selected>Pakistan</option>
+          <option value="india">India</option>
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">UK</option>
+        </select>
+        <br />
+      </fieldset>
+
+      <label for="comments">Comments</label>
+      <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
