@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+p{
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #cd5b5b;
+}
+
+li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #28ab21;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3a3c8f;
+}
+
+.description-2 {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b1b87f;
+}
