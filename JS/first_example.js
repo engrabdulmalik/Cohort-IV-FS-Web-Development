@@ -182,3 +182,76 @@ addStudent("Bob", 19, 78);
 displayStudents();
 let averageMarks = calculateAverageMarks();
 console.log(`Average Marks: ${averageMarks}`);  
+
+
+// Class Task: Library Management System
+// Task:
+// Create a simple Library Management System in JavaScript where students will:
+// ✅ Add books to the library
+// ✅ Display all books
+// ✅ Search for a book by title
+// ✅ Borrow a book (mark as unavailable)
+// ✅ Return a book (mark as available)
+
+// Use arrays to store books and their details (title, author, availability).
+// Use functions to perform tasks.
+// Use loops to process and display data.
+
+let library = [];
+
+function addBook(title, author) {
+    let book = {
+        title: title,
+        author: author,
+        available: true
+    };
+    library.push(book);
+}
+
+function displayBooks() {
+    for (let i = 0; i < library.length; i++) {
+        console.log(`Title: ${library[i].title}, Author: ${library[i].author}, Available: ${library[i].available}`);
+    }       
+}
+function searchBook(title) {
+    for (let i = 0; i < library.length; i++) {
+        if (library[i].title.toLowerCase() === title.toLowerCase()) {
+            return library[i];
+        }
+    }
+    return null;
+}
+
+function borrowBook(title) {
+    let book = searchBook(title);
+    if (book && book.available) {
+        book.available = false;
+        console.log(`You have borrowed "${book.title}" by ${book.author}.`);
+    } else if (book) {
+        console.log(`"${book.title}" is currently unavailable.`);
+    } else {
+        console.log(`Book titled "${title}" not found.`);
+    }
+}
+function returnBook(title) {
+    let book = searchBook(title);
+    if (book) {
+        book.available = true;
+        console.log(`You have returned "${book.title}".`);
+    } else {
+        console.log(`Book titled "${title}" not found.`);
+    }
+}
+// Call the functions
+addBook("The Great Gatsby", "F. Scott Fitzgerald");
+addBook("To Kill a Mockingbird", "Harper Lee");
+addBook("1984", "George Orwell");
+displayBooks();
+borrowBook("1984");
+displayBooks();
+returnBook("1984");
+displayBooks();
+borrowBook("The Great Gatsby");
+displayBooks();
+returnBook("The Great Gatsby");
+displayBooks();
