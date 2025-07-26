@@ -78,16 +78,107 @@
 // }
 
 // bubble sort algorithm
-let arr = [5, 3, 8, 4, 2];
-let n = arr.length;
+// let arr = [5, 3, 8, 4, 2,10,11,18, 1, 6, 7, 9, 12, 13, 14, 15, 16, 17];
+// let n = arr.length;
 
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-            let temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
-        }
-    }
+// for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n - i - 1; j++) {
+//         if (arr[j] > arr[j + 1]) {
+//             let temp = arr[j];
+//             arr[j] = arr[j + 1];
+//             arr[j + 1] = temp;
+//         }
+//     }
+// }
+// console.log(arr);
+
+// let arr = [5, 3, 8, 4, 2, 10, 11, 18, 1, 6, 7, 9, 12, 13, 14, 15, 16, 17];
+// function add(arr) {
+// for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] !== 'number') {
+//         console.log("Invalid input: all elements must be numbers.");
+//         return;
+//     }
+// }
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+// }
+// return sum;
+// }
+   
+
+
+// let result = add(arr);
+// console.log(result); // Output: 15
+
+// let car = {
+//     color:"red",
+//     speed:"120KPH",
+//     price:2000000
+
+// }
+
+// console.log(car["color"]); // Output: red
+
+let arrOfKeys = ["speed", "color", "price"]
+
+// let drone = {
+//     speed:"120KPH",
+//     color:"metallic",
+//     price:200000
+// }
+
+// for(let i =0; i<arrOfKeys.length;i++)
+// {
+//     console.log(drone[arrOfKeys[i]])
+// }
+
+arrOfKeys.pop()
+console.log(arrOfKeys)
+
+// Student Management System (Basic)
+// Task Description:
+// Create a simple JavaScript program that stores information about students and their marks. The program should:
+// ✅ Use arrays to store multiple students.
+// ✅ Use objects to store each student’s details (name, age, marks).
+// ✅ Use functions to perform tasks.
+// ✅ Use loops to process and display data.
+
+//Use arrays to store multiple students.
+let students = [];
+
+// Use objects to store each student’s details (name, age, marks)
+
+function addStudent(name, age, marks) {
+    let student = {
+        name: name,
+        age: age,
+        marks: marks
+    };
+    students.push(student);
 }
-console.log(arr);
+
+// Use functions to perform tasks
+function displayStudents() {
+    for (let i = 0; i < students.length; i++) {
+        console.log(`Name: ${students[i].name}, Age: ${students[i].age}, Marks: ${students[i].marks}`);
+    }
+}   
+
+// Use loops to process and display data
+function calculateAverageMarks() {
+    let totalMarks = 0;
+    for (let i = 0; i < students.length; i++) {
+        totalMarks += students[i].marks;
+    }
+    return totalMarks / students.length;
+}   
+
+// Call the functions
+addStudent("John", 20, 85);
+addStudent("Alice", 22, 92);
+addStudent("Bob", 19, 78);
+displayStudents();
+let averageMarks = calculateAverageMarks();
+console.log(`Average Marks: ${averageMarks}`);  
