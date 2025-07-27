@@ -1,4 +1,4 @@
-let todos = [
+let todos = JSON.parse(localStorage.getItem("todos")) || [
   { title: "Buy groceries", dueDate: "2023-10-01", id: 1 },
   { title: "Walk the dog", dueDate: "2023-10-02", id: 2 },
   { title: "Read a book", dueDate: "2023-10-03", id: 3 },
@@ -8,15 +8,12 @@ render();
 
 function render() {
   const todoList = document.getElementById("todoList");
-  todoList.innerText = "";
+  todoList.innerText = ""; // Clear old list
 
   todos.forEach(function (todo) {
-    // Create a new div for each todo title
+    // Create todo element
     let element = document.createElement("div");
     element.innerText = todo.title + " - Due: " + todo.dueDate;
-
-    // ✅ Append the todo div to todoList (not document.body)
-    todoList.appendChild(element);
 
     // Create delete button
     let deleteButton = document.createElement("button");
@@ -26,6 +23,7 @@ function render() {
     deleteButton.onclick = deleteTodo;
 
     element.appendChild(deleteButton);
+    todoList.appendChild(element);
   });
 
   // ✅ Save updated todos to localStorage
@@ -38,9 +36,9 @@ function addTodoTitle() {
   let datePicker = document.getElementById("todoDate");
   let todoDate = datePicker.value;
 
-  let id = Math.floor(Math.random() * 1000); // Generate random ID
-
   if (todoTitle) {
+    let id = Math.floor(Math.random() * 100000);
+
     todos.push({
       title: todoTitle,
       dueDate: todoDate,
@@ -57,12 +55,9 @@ function addTodoTitle() {
 }
 
 function deleteTodo(event) {
-  const deleteButton = event.target;
-  const todoID = deleteButton.id;
+  const todoID = event.target.id;
 
-  todos = todos.filter(function (todo) {
-    return todo.id != todoID;
-  });
+  todos = todos.filter((todo) => todo.id != todoID);
 
-  render();
+  render(); // Re-render updated list
 }
