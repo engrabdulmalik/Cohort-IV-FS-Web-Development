@@ -34,6 +34,8 @@ function render() {
 
     // });
     element.appendChild(deleteButton);
+    localStorage.setItem("todos", JSON.stringify(todos));
+     // Store the todos in localStorage
   });
 }
 
@@ -48,22 +50,23 @@ function addTodoTitle() {
     todos.push({
       title: todoTitle,
       dueDate: todoDate,
-        id: id,
+      id: id,
     });
     console.log(todos); // Add the new todo title to the array
     render();
     textbox.value = "";
-    datePicker.value = ""; // Clear the input field after adding
+    datePicker.value = "";
+    // Clear the input field after adding
   } else {
     alert("Please enter a todo title.");
   }
 }
 
 function deleteTodo(event) {
- const deleteButton = event.target;
- const todoID = deleteButton.id; // Get the ID from the button
- 
- todos = todos.filter(function(todo) {
+  const deleteButton = event.target;
+  const todoID = deleteButton.id; // Get the ID from the button
+
+  todos = todos.filter(function (todo) {
     return todo.id != todoID; // Filter out the todo with the matching ID
   });
   document.getElementById("todoList").innerText = ""; // Clear the body to avoid duplication
